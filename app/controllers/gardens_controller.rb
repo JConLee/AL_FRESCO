@@ -29,8 +29,9 @@ class GardensController < ApplicationController
     @garden.user = @user
     if
       @garden.save
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: "Thanks for creating a garden"
     else
+      flash[:alert] = "Something went wrong"
       render :new
     end
   end
