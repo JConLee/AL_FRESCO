@@ -7,12 +7,48 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+
+<div class="navbar-wagon">
+  <h1>Al Fresco</h1>
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Sign in</a>
+      <nav class="navbar-search navbar-light bg-light">
+         <form class="form-inline">
+         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+       </form>
+      </nav>
+  </div>
+</div>
+
+
+
+
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <span> | </span>
+        <a href="#">Contact</a>
+        <span> | </span>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copyright">
+       <a href="#">Al Fresco, Inc.</a>
+      </div>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
