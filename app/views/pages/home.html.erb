@@ -3,7 +3,7 @@
   <div class="banner-content">
     <h1>AL FRESCO</h1>
     <p>Rent a garden!</p>
-    <a href="#" class="btn-medium">book now</a>
+    <%= link_to "Book a garden now", gardens_path, class: "btn-medium" %>
   </div>
 </div>
 <div class="container">
@@ -80,10 +80,5 @@
       </div>
       <!-- insert <div class="card"> -->
     </div>
-    <% if current_user %>
-      <%= link_to new_user_garden_path(current_user) do %>
-        <h1>Make a garden</h1>
-      <% end %>
-    <% end %>
   </div>
 </div>
