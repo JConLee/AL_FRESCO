@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-
-
-  <div class="navbar-wagon">
+<div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
@@ -73,26 +56,3 @@
   </div>
 </div>
 
-
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#">About</a>
-        <span> | </span>
-        <a href="#">Contact</a>
-        <span> | </span>
-        <a href="#">Terms</a>
-      </div>
-      <div class="footer-copyright">
-       <a href="#">Al Fresco, Inc.</a>
-      </div>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
-</html>
