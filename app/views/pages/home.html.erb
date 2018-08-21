@@ -80,6 +80,10 @@
       </div>
       <!-- insert <div class="card"> -->
     </div>
-
+    <% if current_user %>
+      <%= link_to new_user_garden_path(current_user) do %>
+        <h1>Make a garden</h1>
+      <% end %>
+    <% end %>
   </div>
 </div>
