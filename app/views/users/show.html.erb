@@ -1,1 +1,4 @@
 <h1>this is the profile of <%= @user.first_name %></h1>
+<% @gardens.each do |garden| %>
+  <h1><%= garden.title %></h1>
+<% end %>

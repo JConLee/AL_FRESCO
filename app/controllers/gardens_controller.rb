@@ -12,6 +12,7 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
+    @user = current_user
   end
 
   def edit
@@ -28,7 +29,7 @@ class GardensController < ApplicationController
     @garden.user = @user
     if
       @garden.save
-      redirect_to user_garden_path(@user)
+      redirect_to user_path(@user)
     else
       render :new
     end
@@ -37,7 +38,7 @@ class GardensController < ApplicationController
   def destroy
     @user = @garden.user
     @garden.destroy
-    redirect_to user_garden_path(@user)
+    redirect_to user_path(@user)
   end
 
 
