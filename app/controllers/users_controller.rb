@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @gardens = Garden.where(user: current_user)
   end
 
   def edit
