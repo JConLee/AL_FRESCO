@@ -1,8 +1,16 @@
 <h1><%= @garden.title %></h1>
 <h2><%= @garden.address %></h2>
 
+<div>
+<% if @garden.photo.present? %>
+<%= cl_image_tag @garden.photo%>
+<% end %>
+</div>
+
 
 <%#= link_to "Edit Garden", edit_user_garden_path, class: "btn btn-primary" %>
+<%= link_to "Book Now!", new_garden_booking_path(@garden), class: "btn btn-primary" %>
+
 <%= link_to "Back to Gardens", gardens_path, class: "btn btn-primary" %>
 <br>
 <br>

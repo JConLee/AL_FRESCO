@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :edit, :destroy, :new]
+  before_action :find_booking, only: [:show, :edit, :destroy]
 
   def index
     @bookings = Booking.all
@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
   end
 
@@ -21,12 +22,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @booking = booking.new(booking_params)
+    @user = current_user
+    @garden = Garden.find(params[:garden_id])
+    @booking = Booking.new(booking_params)
     @booking.user = @user
-    if
-      @booking.save
-      redirect_to bookings_path(@user), notice: "Thanks for booking"
+    @booking.garden = @garden
+    if @booking.save
+      redirect_to garden_booking_path(@garden, @booking), notice: "Thanks for booking"
     else
       render :new
     end
@@ -47,7 +49,7 @@ end
 
 
 def booking_params
-  params.require(:booking).permit(:user_id, :garden_id, :date)
+  params.require(:booking).permit(:date)
 end
 
 
