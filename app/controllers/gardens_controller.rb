@@ -5,7 +5,7 @@ class GardensController < ApplicationController
   def index
     @gardens = Garden.where.not(latitude: nil, longitude: nil)
 
-    @markers = @gardens.map do |flat|
+    @markers = @gardens.map do |garden|
       {
         lat: garden.latitude,
         lng: garden.longitude
