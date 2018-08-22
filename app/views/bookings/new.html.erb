@@ -1,0 +1,15 @@
+<h1>Book <%= @garden.title %></h1>
+
+<div class="container-booking garden-new">
+<%= simple_form_for [@garden, @booking] do |f| %>
+ <%= f.input :date, input_html: { id: 'datepicker' }  %>
+ <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+</div>
+
+<%= javascript_pack_tag 'datepicker' %>
+
+<!-- <form action="/gardens/2/bookings">
+  <input type="text" name='booking[date]'>
+  <input type="submit" value='Create Booking'>
+</form> -->
