@@ -19,8 +19,12 @@
 
 
 
-      <div id="map"></div>
-    </div>
+      <div
+       id="map"
+       style="width: 50%;
+       height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       ></div>
      <!-- Gmaps js: building the map -->
 <script>
   function initMap() {

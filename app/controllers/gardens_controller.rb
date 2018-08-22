@@ -3,7 +3,15 @@ class GardensController < ApplicationController
   # before_action :find_garden, only: [:show, :edit, :destroy]
 
   def index
-    @gardens = Garden.all
+    @gardens = Garden.where.not(latitude: nil, longitude: nil)
+
+    @markers = @gardens.map do |flat|
+      {
+        lat: garden.latitude,
+        lng: garden.longitude
+      }
+  end
+
   end
 
   def show
