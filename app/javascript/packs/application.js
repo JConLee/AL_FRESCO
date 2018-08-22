@@ -1,2 +1,2 @@
 import "bootstrap";
-import mapElement from 'maps'
+import mapElement from './maps.js'

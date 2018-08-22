@@ -1,6 +1,6 @@
 import GMaps from 'gmaps/gmaps.js';
 
-const mapElement = document.getElementById('map');
+export const mapElement = document.getElementById('map');
 if (mapElement) {
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
@@ -13,5 +13,6 @@ if (mapElement) {
   } else {
     map.fitLatLngBounds(markers);
   }
-}
-export mapElement
+};
+
+
