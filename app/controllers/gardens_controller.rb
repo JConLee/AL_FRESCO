@@ -51,7 +51,7 @@ end
 
 
 def garden_params
-  params.require(:garden).permit(:title, :address)
+  params.require(:garden).permit(:title, :address, :photo)
 end
 
 
