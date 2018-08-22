@@ -7,10 +7,12 @@ class GardensController < ApplicationController
   end
 
   def show
+    @garden = Garden.find(params[:id])
   end
 
   def new
     @garden = Garden.new
+    @user = current_user
   end
 
   def edit
@@ -27,8 +29,9 @@ class GardensController < ApplicationController
     @garden.user = @user
     if
       @garden.save
-      redirect_to user_garden_path(@user)
+      redirect_to user_path(@user), notice: "Thanks for creating a garden"
     else
+      flash[:alert] = "Something went wrong"
       render :new
     end
   end
@@ -36,7 +39,7 @@ class GardensController < ApplicationController
   def destroy
     @user = @garden.user
     @garden.destroy
-    redirect_to user_garden_path(@user)
+    redirect_to user_path(@user)
   end
 
 

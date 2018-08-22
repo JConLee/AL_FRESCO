@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @gardens = Garden.where(user: current_user)
   end
 
   def edit
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to_user_path(@user)
+    redirect_to user_path(@user)
   end
 
   private
