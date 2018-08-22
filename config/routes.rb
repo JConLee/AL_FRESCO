@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :gardens, only: [:new, :create, :edit, :update]
   end
-  resources :gardens, only: [:index, :show]
+  resources :gardens, only: [:index, :show] do
   resources :bookings
+end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
