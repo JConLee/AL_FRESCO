@@ -1,3 +1,17 @@
+
+<h1 class= "title">Results for gardens</h1>
+
+<div class="flex">
+  <div class="container">
+    <div class="row">
+      <% @gardens.each do |garden| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <h3><%= garden.title %></h3>
+            <p><%= garden.address %></p>
+            <%= link_to "See more details", garden_path(garden) , class: "card-link" %>
+          </div>
+
 <h1>Results for gardens</h1>
 
 <div class="container">
@@ -10,23 +24,19 @@
           <h3><%= garden.title %></h3>
           <p><%= garden.address %></p>
           <%= link_to "See more details", garden_path(garden) , class: "card-link" %>
+
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
+  <div
+   id="map"
+   style="width: 50%;
+   height: 600px;"
+   data-markers="<%= @markers.to_json %>"
+   ></div>
 </div>
-
-
-
-
-
-
-      <div
-       id="map"
-       style="width: 50%;
-       height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       ></div>
      <!-- Gmaps js: building the map -->
 <script>
   function initMap() {
