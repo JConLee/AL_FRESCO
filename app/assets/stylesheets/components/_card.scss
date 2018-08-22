@@ -3,7 +3,7 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: #FFFFFC;
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -23,6 +23,8 @@
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #F18805;
 }
 .card-description {
   position: absolute;
@@ -31,11 +33,13 @@
 }
 .card-description h2 {
   font-size: 24px;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .card-link {
   position: absolute;
