@@ -1,0 +1,16 @@
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+.content {
+  display: flex;
+}
+
+.title {
+  padding-top: 30px;
+  padding-left: 20px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #0D5D56;
+}
