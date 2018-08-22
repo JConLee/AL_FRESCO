@@ -18,7 +18,7 @@
   <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -28,7 +28,6 @@
 
       <!-- Links when logged in -->
       <%= link_to "Host an Outdoor Space", new_user_garden_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
