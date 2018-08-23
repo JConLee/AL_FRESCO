@@ -1,9 +1,9 @@
-<h1>Book <%= @garden.title %></h1>
+<h1 class="title">Book <%= @garden.title %></h1>
 
 <div class="container-booking garden-new">
 <%= simple_form_for [@garden, @booking] do |f| %>
  <%= f.input :date, input_html: { id: 'datepicker' }  %>
- <%= f.button :submit, class: "btn btn-primary" %>
+ <%= f.button :submit, class: "btn btn-book" %>
 <% end %>
 </div>
 
