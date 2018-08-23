@@ -29,7 +29,7 @@
 .card-description {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 20px;
 }
 .card-description h2 {
   font-size: 24px;
@@ -41,6 +41,11 @@
   font-weight: lighter;
   font-family: 'Montserrat Alternates', sans-serif;
 }
+.card-description h3{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 15px;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -50,7 +55,14 @@
   z-index: 2;
   background: black;
   opacity: 0;
+  border-radius: 5px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 24px;
+  text-decoration: none;
 }
 .card-link:hover {
-  opacity: 0.1;
+  position: absolute;
+  opacity: 0.8;
+  text-decoration: none;
+  font-color: #FFFFFC;
 }
