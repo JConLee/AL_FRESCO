@@ -10,6 +10,8 @@ class GardensController < ApplicationController
         lat: garden.latitude,
         lng: garden.longitude
       }
+    # @gardens = Garden.all
+    # http://www.localhost:3000/gardens/3/bookings/1
   end
 
   end
