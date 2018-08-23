@@ -1,5 +1,3 @@
-
-
 <div class="flex-between">
   <div class="row" style="flex: 0 0 50%">
     <div class="garden-cards">
@@ -13,7 +11,7 @@
       <% @gardens.each do |garden| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="card"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'garden.jpg'%>);">
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path garden.photo %>);">
             <h3 ><%= garden.title %></h3>
             <p class="card-description"><%= garden.address %></p>
             <%= link_to "See more details", garden_path(garden) , class: "card-link" %>
