@@ -20,10 +20,10 @@ user_4 = User.create(first_name: 'Oli', last_name: 'Marriott', email: "oli@gmail
 # puts "#{user.errors.messages}"
 
 
-garden_1 = Garden.create(title: 'Walled Garden', address: 'Devon', latitude: 0, longitude: 0, photo: "../app/assets/images/garden.jpg")
-garden_2 = Garden.create(title: 'Pool Garden' , address: 'Portugal', latitude:0, longitude:0, photo: "../app/assets/images/garden.jpg")
-garden_3 = Garden.create(title: 'Maze Garden',address: 'East Sussex', latitude:0, longitude:0, photo: "../app/assets/images/garden.jpg")
-garden_4 =  Garden.create(title: 'Historic woodland', address: 'Hampshire', latitude:0, longitude:0, photo: "../app/assets/images/garden.jpg")
+garden_1 = Garden.create(title: 'Walled Garden', address: '100 Acomb Road', photo: "../app/assets/images/garden.jpg")
+garden_2 = Garden.create(title: 'Pool Garden' , address: '28 Elvendon Road', photo: "../app/assets/images/garden.jpg")
+garden_3 = Garden.create(title: 'Maze Garden',address: '23 Birnam Road', photo: "../app/assets/images/garden.jpg")
+garden_4 =  Garden.create(title: 'Historic woodland', address: '366 Kennington Road', photo: "../app/assets/images/garden.jpg")
 
 garden_1.user = user_1
 garden_1.save
