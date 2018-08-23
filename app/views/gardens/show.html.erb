@@ -1,22 +1,16 @@
 <h1 class="title"><%= @garden.title %></h1>
 <h2 class="title"><%= @garden.address %></h2>
-<h2 class="title"><%= @garden.price %></h2>
-<h2 class="title"><%= @garden.description %></h2>
+<h2 class="price"><%= @garden.price %></h2>
+<h2 class="description"><%= @garden.description %></h2>
 
-
+<br>
+<br>
+<br>
 <div>
 <% if @garden.photo.present? %>
 <%= cl_image_tag @garden.photo%>
 <% end %>
 </div>
-
-<br>
-<br>
-<%= link_to  gardens_path,
-      method: :delete,
-      data: { confirm: "Are you sure?" } do %>
-       <i class="fas fa-trash-alt"></i>
-      <% end %>
 
 <br>
 <br>
