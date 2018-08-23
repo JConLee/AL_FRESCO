@@ -1,4 +1,7 @@
-body {
+.title {
+  padding-top: 30px;
+  padding-left: 30px;
+  font-family: 'Montserrat Alternates', sans-serif;
   color: #0D5D56;
 }
 
@@ -31,4 +34,16 @@ body {
   background: #FF7F11;
   text-decoration: none;
   color: #FFFFFC;
+}
+
+.price {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #F18805;
+  font-size: 36px;
+  font-weight: lighter;
+}
+
+.description {
+  font-family: 'Assistant', sans-serif;
+  color: #0D5D56;
 }
