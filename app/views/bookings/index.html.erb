@@ -1,6 +1,6 @@
 <h1>My bookings</h1>
-<% @bookings.current_user.each do |booking| %>
-<h2><%= @booking.garden.title %></h2>
-<h1><%= @booking.date %></h1>
+<% @bookings.each do |booking| %>
+
+<p> You have booked the <%= booking.garden.title %> on <%= booking.date %></p>
 <% end %>
 
