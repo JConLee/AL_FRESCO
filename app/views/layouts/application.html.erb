@@ -28,7 +28,7 @@
     <% if current_user %>
 
       <!-- Links when logged in -->
-      <%= link_to "My Bookings", garden_bookings_path(current_user), class: "navbar-wagon-item
+      <%= link_to "My Bookings", bookings_path(current_user), class: "navbar-wagon-item
         navbar-wagon-link" %>
       <%= link_to "Host an Outdoor Space", new_user_garden_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
