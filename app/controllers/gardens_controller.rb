@@ -9,13 +9,13 @@ class GardensController < ApplicationController
       @gardens = Garden.where.not(latitude: nil, longitude: nil)
     end
 
-    # @markers = @gardens.map do |garden|
-    #   {
-    #     lat: garden.latitude,
-    #     lng: garden.longitude
-    #   }
+    @markers = @gardens.map do |garden|
+      {
+        lat: garden.latitude,
+        lng: garden.longitude
+      }
 
-    # end
+    end
 
   end
 
