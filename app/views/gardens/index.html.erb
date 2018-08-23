@@ -3,6 +3,12 @@
 <div class="container flex-between">
   <div class="row" style="flex: 0 0 50%">
     <h1 class="title">Results for gardens</h1>
+    <%= form_tag gardens_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a venue"%>
+    <% end %>
     <% @gardens.each do |garden| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card"

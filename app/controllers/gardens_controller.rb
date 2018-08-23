@@ -3,16 +3,19 @@ class GardensController < ApplicationController
   # before_action :find_garden, only: [:show, :edit, :destroy]
 
   def index
-    @gardens = Garden.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @gardens = Garden.search_by_title_and_address(params[:query]).where.not(latitude: nil, longitude: nil)
+    else
+      @gardens = Garden.where.not(latitude: nil, longitude: nil)
+    end
 
-    @markers = @gardens.map do |garden|
-      {
-        lat: garden.latitude,
-        lng: garden.longitude
-      }
-    # @gardens = Garden.all
-    # http://www.localhost:3000/gardens/3/bookings/1
-  end
+    # @markers = @gardens.map do |garden|
+    #   {
+    #     lat: garden.latitude,
+    #     lng: garden.longitude
+    #   }
+
+    # end
 
   end
 

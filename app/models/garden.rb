@@ -8,4 +8,11 @@ class Garden < ApplicationRecord
 
 mount_uploader :photo, PhotoUploader
 
+ include PgSearch
+  pg_search_scope :search_by_title_and_address,
+    against: [ :title, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
