@@ -15,81 +15,84 @@
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
+
   <body>
 
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
 
-  <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <% if current_user %>
 
-    <% if current_user %>
+        <!-- Links when logged in -->
+        <%= link_to "Host an Outdoor Space", new_user_garden_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "My Gardens", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Links when logged in -->
-      <%= link_to "Host an Outdoor Space", new_user_garden_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Gardens", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        <!-- Avatar with dropdown menu -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= image_tag "http://kitt.lewagon.com/placeholder/users/olimarrio", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+      </div>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/olimarrio", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
+            <li><a href="#">Some mobile link</a></li>
+            <li><a href="#">Other one</a></li>
+            <li><a href="#">Other one</a></li>
           </ul>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
     </div>
-  </div>
-</div>
 
+    <% if notice %>
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= notice %>
+      </div>
+    <% end %>
 
-<% if notice %>
-  <div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
-  </div>
-<% end %>
-<% if alert %>
-  <div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
-  </div>
-<% end %>
-    <%= yield %>
+    <% if alert %>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <div class="min-content-height">
+      <%= yield %>
+    </div>
 
     <div class="footer">
       <div class="footer-links">
@@ -103,6 +106,7 @@
        <a href="#">Al Fresco, Inc.</a>
       </div>
     </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>

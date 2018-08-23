@@ -8,16 +8,15 @@
 }
 
 .garden-new {
-  height: calc(100vh - 170px - 20px);
+  // height: calc(100vh - 170px - 20px);
   padding-top: 60px;
   padding-left: 20px;
   font-family: 'Montserrat Alternates', sans-serif;
   color: #0D5D56;
 }
 
-.container{
+.container-size {
   position:relative;
-  left:50px;
   max-width: 500px;
   padding: 20px 12px 10px 20px;
 
