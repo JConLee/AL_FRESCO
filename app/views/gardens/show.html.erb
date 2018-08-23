@@ -1,5 +1,6 @@
-<h1><%= @garden.title %></h1>
-<h2><%= @garden.address %></h2>
+<h1 class="title"><%= @garden.title %></h1>
+<h2 class="title"><%= @garden.address %></h2>
+
 
 <div>
 <% if @garden.photo.present? %>
@@ -7,11 +8,6 @@
 <% end %>
 </div>
 
-
-<%#= link_to "Edit Garden", edit_user_garden_path, class: "btn btn-primary" %>
-<%= link_to "Book Now!", new_garden_booking_path(@garden), class: "btn btn-primary" %>
-
-<%= link_to "Back to Gardens", gardens_path, class: "btn btn-primary" %>
 <br>
 <br>
 <%= link_to  gardens_path,
@@ -19,5 +15,12 @@
       data: { confirm: "Are you sure?" } do %>
        <i class="fas fa-trash-alt"></i>
       <% end %>
+
+<br>
+<br>
+<%#= link_to "Edit Garden", edit_user_garden_path, class: "btn btn-primary" %>
+<%= link_to "Browse Gardens", gardens_path, class: "btn btn-back" %>
+<%= link_to "Book Now!", new_garden_booking_path(@garden), class: "btn btn-book" %>
+
 
 <!-- Hello -->
