@@ -5,6 +5,9 @@ class Garden < ApplicationRecord
   has_many :users, through: :bookings
   validates :address, presence: true
   validates :title, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+
 
 mount_uploader :photo, PhotoUploader
 
