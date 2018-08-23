@@ -8,14 +8,14 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 
 
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300i,400,700,800" rel="stylesheet">
->
+
 
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
@@ -36,6 +36,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "Host an Outdoor Space", new_user_garden_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Gardens", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
