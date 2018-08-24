@@ -48,7 +48,7 @@
   padding-left: 30px;
   font-family: 'Assistant', sans-serif;
   color: #0D5D56;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .address {
@@ -59,9 +59,13 @@
 }
 
 .img-show {
-  border-radius: 10px;
+  float: left;
+  border-radius: 20px;
   padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 20px;
 }
+
 
 .bg-description {
   padding-left: 0px;
@@ -83,3 +87,8 @@
 
 
 }
+
+.btn-show-garden {
+  margin-left: 350px;
+}
+
