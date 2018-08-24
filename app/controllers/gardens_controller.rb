@@ -14,7 +14,6 @@ class GardensController < ApplicationController
         lat: garden.latitude,
         lng: garden.longitude
       }
-
     end
 
   end
