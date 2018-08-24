@@ -1,3 +1,26 @@
-<h1>You booked the <%= @booking.garden.title %> on the <%= @booking.date %></h1>
 
-<h3>Enjoy</h3>
+
+
+
+  <% if @garden.photo.present? %>
+  <%= cl_image_tag @garden.photo, class: "card-garden img-booked"%>
+  <% end %>
+
+
+
+<div class="bg-description confirmation">
+
+  <h1>You booked the <%= @booking.garden.title %> on the <%= @booking.date %></h1>
+
+
+</div>
+
+<div class="booking-buttons">
+    <%= link_to "Browse Gardens", gardens_path, class: "btn btn-back" %>
+    <%= link_to "See Bookings", bookings_path, class: "btn btn-book" %>
+
+
+</div>
+
+ <%#= cl_image_tag @garden.photo%>
+
