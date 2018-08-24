@@ -5,33 +5,27 @@
   <div class="container-show">
     <div class="cards">
 
-  <div>
-    <% if @garden.photo.present? %>
-    <%= cl_image_tag @garden.photo, class: "img-show"%>
-    <% end %>
-  </div>
-  <div>
-    <h1 class="title"><%= @garden.title %></h1>
-  </div>
-  <div>
-    <h2 class="address"><%= @garden.address %></h2>
-  </div>
-  <div>
-    <h2 class="price">£<%= @garden.price %></h2>
-  </div>
-  <div>
-    <p class="description"><%= @garden.description %></p>
-  </div>
+      <div>
+        <% if @garden.photo.present? %>
+        <%= cl_image_tag @garden.photo, class: "card-garden img-show"%>
+        <% end %>
+      </div>
+      <div class="garden-description">
+        <h1 class="title"><%= @garden.title %></h1>
+        <h2 class="address"><%= @garden.address %></h2>
+        <h2 class="price">£<%= @garden.price %></h2>
+        <p class="description"><%= @garden.description %></p>
+        <%= link_to "Browse Gardens", gardens_path, class: "btn btn-back btn-show-garden" %>
+        <%= link_to "Book Now!", new_garden_booking_path(@garden), class: "btn btn-book" %>
+      </div>
 
 
   <br>
   <br>
   <%#= link_to "Edit Garden", edit_user_garden_path, class: "btn btn-primary" %>
-  <%= link_to "Browse Gardens", gardens_path, class: "btn btn-back" %>
-  <%= link_to "Book Now!", new_garden_booking_path(@garden), class: "btn btn-book" %>
 
+    </div>
   </div>
-</div>
 <!-- Hello -->
 
 
