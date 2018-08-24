@@ -12,7 +12,9 @@ class GardensController < ApplicationController
     @markers = @gardens.map do |garden|
       {
         lat: garden.latitude,
-        lng: garden.longitude
+        lng: garden.longitude,
+        # icon: { url: "http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png"},
+        icon: { url: ActionController::Base.helpers.image_url('orangepin.png')}
       }
 
     end
