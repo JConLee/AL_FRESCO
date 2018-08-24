@@ -1,25 +1,10 @@
-<h1 class="title">My bookings</h1>
+<h1 class="bg-title">My bookings</h1>
 <% @bookings.each do |booking| %>
-
-
-
-<div class='container'>
-
-<ul>
-
-
-<li>
-
-<p class="description"> You have booked the <%= booking.garden.title %> on <%= booking.date %></p>
-
-</li>
-
-
-
-</ul>
-
+  <div class='booking-container'>
+    <ul>
+      <li>
+        <p class="bg-description"> You have booked the <%= booking.garden.title %> on <%= booking.date %> <%= link_to "View", garden_path(booking.garden), class: "btn btn-back"%>  </p>
+      </li>
+    </ul>
+  </div>
 <% end %>
-
-
-
-</div>
